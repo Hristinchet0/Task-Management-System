@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tr="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Task Management System</title>
+    <link th:href="@{/static/css/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/static/css/style.css}">
+</head>
+<body>
+<nav>
+    <a class="nav-title" href="">Task Management System</a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="addTask">Add Task</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div>
+        <h2>Unfinished Tasks</h2>
+    </div>
+
+    <table id="tasks">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="t: ${task}">
+            <th th:text="${t.id}"></th>
+            <td th:text="${t.title}"></td>
+            <td th:text="${t.description}"></td>
+            <td>
+                <a class="btn-edit" th:href="@{/edit/{id}(id=${t.id})}">Edit</a>
+                <a class="btn-delete" th:href="@{/delete/{id}(id=${t.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>

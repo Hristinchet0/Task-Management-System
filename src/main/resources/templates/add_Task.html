@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Task Management System</title>
+</head>
+<body>
+<nav>
+    <a class="nav-title" href="">Task Management System</a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="">Add Task</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-add-task">Add a New Task</h1>
+            <form th:action="@{/register}" method="post">
+                <label>Title:</label>
+                <input type="text" name="title" required>
+                <label>Description:</label>
+                <input type="text" name="description" required>
+                <button class="btn" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

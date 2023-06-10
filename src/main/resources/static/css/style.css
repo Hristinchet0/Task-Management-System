@@ -1,0 +1,170 @@
+nav {
+    display: flex;
+    flex-direction: initial;
+    background-color: #80F2C2;
+}
+
+nav > a {
+    color: #273857;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+ul > li > a {
+    color: #273857;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    padding-left: 60px;
+}
+
+/*----------------------------------------------------------------*/
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../image/b1.jpg);
+    width: 100%;
+    height: 840px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+
+h1 {
+    background: #80F2C2;
+    padding: 15px;
+}
+
+h2 {
+    color: #273857;
+    margin-top: 172px;
+    margin-right: 182px;
+}
+
+
+#tasks {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 15%;
+}
+
+#tasks td, #tasks th {
+    border: 1px solid grey;
+    padding: 8px;
+}
+
+#tasks tr:nth-child(even){background-color: #f2f2f2;}
+
+#tasks tr:hover {background-color: #ddd;}
+
+#tasks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #80F2C2;
+    color: #273857;
+}
+
+#tasks > thead > tr > th:nth-child(1) {
+    width: 50px;
+}
+
+#tasks > thead > tr > th:nth-child(2) {
+    width: 125px;
+}
+
+#tasks > thead > tr > th:nth-child(3) {
+    width: 300px;
+}
+#tasks > thead > tr > th:nth-child(4) {
+    width: 180px;
+}
+
+
+/*-----------------------------------------------------------------*/
+
+.btn-edit {
+    border-radius: 3px;
+    background: #54CA98;
+    padding: 5px 20px;
+
+}
+
+.btn-delete {
+    border-radius: 3px;
+    background: #FB9076;
+    padding: 5px 20px;
+
+}
+
+#tasks > tbody > tr > td:nth-child(4) {
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-around;
+}
+
+/* add a new task */
+
+.card {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin-top: 80px;
+    background: white;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.text-add-task {
+    color: #273857;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    font-size: 20px;
+    color: #273857;
+    padding-bottom: 10px;
+}
+
+body > section > div > div > form > input[type=text] {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    border-radius: 3px;
+    background: #54CA98;
+    padding: 5px 20px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
