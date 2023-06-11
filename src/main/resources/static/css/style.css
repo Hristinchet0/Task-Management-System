@@ -48,9 +48,9 @@ h1 {
 }
 
 h2 {
-    font-size: 33px;
+    font-size: 50px;
     color: #273857;
-    margin-top: 172px;
+    margin-top: 128%;
     margin-right: 205px;
 }
 
@@ -59,7 +59,7 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 60%;
-    margin-top: 15%;
+
 }
 
 #tasks td, #tasks th {
@@ -155,7 +155,8 @@ h2 {
     word-wrap: break-word;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
-    margin-top: 80px;
+    margin-top: 5%;
+    margin-bottom: 27%;
     background: white;
 }
 
