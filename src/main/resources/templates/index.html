@@ -30,14 +30,16 @@
             <th>Id</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Progress</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="t: ${task}">
-            <th th:text="${t.id}"></th>
+            <td th:text="${t.id}"></td>
             <td th:text="${t.title}"></td>
             <td th:text="${t.description}"></td>
+            <td th:text="${t.progress}"></td>
             <td>
                 <a class="btn-edit" th:href="@{/edit/{id}(id=${t.id})}">Edit</a>
                 <a class="btn-delete" th:href="@{/delete/{id}(id=${t.id})}">Delete</a>
@@ -45,6 +47,28 @@
         </tr>
         </tbody>
     </table>
+</section>
+
+<section class="section-export-data">
+    <div class="card">
+        <div class="card-body">
+            <h1>Export Data</h1>
+
+            <p>Choice file type from drop-down menu.</p>
+
+            <form th:action="@{/export}" method="post">
+                <label for="files">Choose a file type:</label>
+                <select name="files" id="files">
+                    <option value="CSV">CSV</option>
+                    <option value="TXT">TXT</option>
+                    <option value="EXCEL">EXCEL</option>
+                    <option value="JSON">JSON</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </section>
 
 </body>

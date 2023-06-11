@@ -3,7 +3,7 @@ package com.taskmanagementsystem.tms.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tsk")
+@Table(name = "task")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Task {
     private String description;
 
     @Column(name = "isCompleted")
-    private boolean isCompleted;
+    private String progress;
 
     public Task() {
     }
@@ -44,12 +44,12 @@ public class Task {
         this.description = description;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
+    public String getProgress() {
+        return progress;
     }
 
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
+    public void setProgress(String isCompleted) {
+        this.progress = isCompleted;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Task {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", isCompleted=" + isCompleted +
+                ", isCompleted=" + progress +
                 '}';
     }
 }

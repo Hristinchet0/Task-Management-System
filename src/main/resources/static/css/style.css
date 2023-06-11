@@ -34,7 +34,7 @@ section {
     align-items: center;
     background-image: url(../image/b1.jpg);
     width: 100%;
-    height: 840px;
+    height: 10%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -48,9 +48,10 @@ h1 {
 }
 
 h2 {
+    font-size: 33px;
     color: #273857;
     margin-top: 172px;
-    margin-right: 182px;
+    margin-right: 205px;
 }
 
 
@@ -78,6 +79,11 @@ h2 {
     color: #273857;
 }
 
+#tasks > tbody > tr {
+    background-color: #F0F0F0;
+
+}
+
 #tasks > thead > tr > th:nth-child(1) {
     width: 50px;
 }
@@ -89,10 +95,37 @@ h2 {
 #tasks > thead > tr > th:nth-child(3) {
     width: 300px;
 }
+
 #tasks > thead > tr > th:nth-child(4) {
+    width: 110px;
+
+}
+
+#tasks > thead > tr > th:nth-child(5) {
     width: 180px;
 }
 
+#tasks > tbody > tr > td:nth-child(1) {
+    font-weight: bold;
+}
+
+#tasks > tbody > tr > td:nth-child(2) {
+    font-weight: bold;
+}
+
+#tasks > tbody > tr > td:nth-child(3) {
+    font-weight: bold;
+}
+
+#tasks > tbody > tr > td:nth-child(4) {
+    font-weight: bold;
+}
+
+#tasks > tbody > tr > td:nth-child(5) {
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-around;
+}
 
 /*-----------------------------------------------------------------*/
 
@@ -108,12 +141,6 @@ h2 {
     background: #FB9076;
     padding: 5px 20px;
 
-}
-
-#tasks > tbody > tr > td:nth-child(4) {
-    display: flex;
-    flex-direction: initial;
-    justify-content: space-around;
 }
 
 /* add a new task */
