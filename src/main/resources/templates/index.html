@@ -56,7 +56,7 @@
 
             <p>Choice file type from drop-down menu.</p>
 
-            <form th:action="@{/export}" method="post">
+            <form th:action="@{/export}" method="get">
                 <label for="files">Choose a file type:</label>
                 <select name="files" id="files">
                     <option value="CSV">CSV</option>

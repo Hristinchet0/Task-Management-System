@@ -2,10 +2,7 @@ package com.taskmanagementsystem.tms.Controller;
 
 import com.taskmanagementsystem.tms.Entity.Task;
 import com.taskmanagementsystem.tms.Service.TaskService;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
+
 
 @Controller
 public class TaskController {
@@ -46,6 +41,7 @@ public class TaskController {
 
     @GetMapping("/edit/{id}")
     public String editTask(@PathVariable Long id, Model model) {
+        logger.info("Task is edited");
         Task task = taskService.getTaskById(id);
 
         model.addAttribute("task", task);
@@ -54,6 +50,7 @@ public class TaskController {
 
     @PostMapping("/update")
     public String updateTask(@ModelAttribute Task t) {
+        logger.info("Task is updated");
         taskService.addTask(t);
 
         return "redirect:/";
@@ -61,31 +58,29 @@ public class TaskController {
 
     @GetMapping("/delete/{id}")
     public String deleteTask(@PathVariable Long id) {
+        logger.info("Task is deleted");
         taskService.deleteTaskById(id);
         return "redirect:/";
     }
 
-    @PostMapping("/export")
-    public String exportTasks(@RequestParam("files") String format) {
+    @GetMapping("/export")
+    @ResponseBody
+    public void exportData(@RequestParam("files") String format, HttpServletResponse response) {
         logger.info("Exporting tasks in file in format: {}", format);
-        List<Task> tasks = taskService.getTasks();
+        List<Task> taskList = taskService.getTasks();
 
-        try {
-            if ("CSV".equalsIgnoreCase(format)) {
-                taskService.exportToCSV(tasks);
-            } else if ("JSON".equalsIgnoreCase(format)) {
-                taskService.exportToJSON(tasks);
-            } else if ("TXT".equalsIgnoreCase(format)) {
-                taskService.exportToTXT(tasks);
-            } else if ("EXCEL".equalsIgnoreCase(format)) {
-                taskService.exportToEXCEL(tasks);
-            } else {
-                throw new IllegalArgumentException("Invalid export format: " + format);
-            }
-        } catch (IOException e) {
-            logger.error("Error exporting tasks in file: {}, {}", e.getMessage(), e.getCause());
+        if ("CSV".equalsIgnoreCase(format)) {
+            taskService.exportToCSV(response, taskList);
+        } else if ("JSON".equalsIgnoreCase(format)) {
+            taskService.exportToJSON(response, taskList);
+        } else if ("TXT".equalsIgnoreCase(format)) {
+            taskService.exportToTXT(response, taskList);
+        } else if ("EXCEL".equalsIgnoreCase(format)) {
+            taskService.exportToEXCEL(response, taskList);
+        } else {
+            throw new IllegalArgumentException("Invalid export format: " + format);
         }
 
-        return "redirect:/";
     }
+
 }
