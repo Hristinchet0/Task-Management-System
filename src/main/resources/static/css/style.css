@@ -39,6 +39,16 @@ li {
     padding-left: 60px;
 }
 
+.fa-house {
+    margin-right: 4px;
+    color: #273857;
+}
+
+.fa-square-plus {
+    margin-right: 4px;
+    color: #273857;
+}
+
 /*----------------------------------------------------------------*/
 
 section {
