@@ -7,22 +7,28 @@ html * {
 
 body {
     box-sizing: border-box;
+    background-image: url(../image/b1.jpg);
+    width: 100%;
+    height: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
-nav {
+body > nav {
     display: flex;
     flex-direction: initial;
     background-color: #80F2C2;
     justify-content: space-between;
 }
 
-nav > a {
+body > nav > a {
     color: #273857;
     font-size: 40px;
     text-decoration: none;
     padding-left: 20px;
 }
 
-ul {
+body > nav > ul {
     display: flex;
     flex-direction: row;
     padding-right: 30px;
@@ -55,12 +61,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../image/b1.jpg);
-    width: 100%;
-    height: 10%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+}
+
+body > section:nth-child(3) > div {
+    margin-top: 131px;
 }
 
 
@@ -70,7 +74,7 @@ h1 {
     padding: 15px;
 }
 
-h2 {
+body > section:nth-child(3) > div > h2 {
     font-size: 50px;
     color: #273857;
     margin-top: 18%;
@@ -194,17 +198,22 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-}
-
-form {
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     color: #273857;
     padding-bottom: 10px;
 }
 
+#files {
+    margin-top: 20px;
+    padding-right: 60px;
+}
+
 
 .card-body > form:nth-child(2) > label:nth-child(1) {
     margin-bottom: 13px;
+    margin-top: 30px;
 }
 
 body > section > div > div > form > input[type=text] {
@@ -219,7 +228,7 @@ body > section > div > div > form > input[type=text] {
     margin-top: 30px;
 }
 
-.fa-file-csv {
+body > section.section-export-data > div > div > form > p > i.fa-solid.fa-file-csv {
     padding-left: 30px;
     padding-right: 25px;
 }
@@ -234,9 +243,17 @@ i.fa-solid:nth-child(3) {
     padding-right: 25px;
 }
 
-.card-body > form:nth-child(2) > input:nth-child(6) {
-    margin-top: 22px;
+
+body > section.section-export-data > div > div > form > input {
+    border-radius: 3px;
+    background: #54CA98;
+    padding: 5px 20px;
 }
+
+body > nav > ul {
+
+}
+
 
 
 
