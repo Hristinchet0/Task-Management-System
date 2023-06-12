@@ -6,6 +6,10 @@ html * {
 }
 
 body {
+    padding: 0px 0px 0px 0px;
+}
+
+body {
     box-sizing: border-box;
     background-image: url(../image/b1.jpg);
     width: 100%;
@@ -216,6 +220,7 @@ form {
 
     margin-top: 30px;
 }
+#myModal > div > div > section > div > div
 
 main > section > div > div > form > input[type=text] {
     margin-top: 8px;
@@ -237,26 +242,41 @@ main > section > div > div > form > input[type=text] {
     border: none;
 }
 
-main > section.section-export-data > div > div > form > p > i.fa-solid.fa-file-csv {
+#myModal > div > div > section > div > div > form > p > i.fa-solid.fa-file-csv {
     padding-left: 30px;
     padding-right: 25px;
 }
 
-i.fa-solid:nth-child(2) {
+.fa-file-excel {
     padding-left: 10px;
     padding-right: 25px;
 }
 
-i.fa-solid:nth-child(3) {
+.fa-file {
     padding-left: 10px;
     padding-right: 25px;
 }
 
+#myModal > div > div > section > div > div > form > label {
+    margin-bottom: 10px;
+}
 
-main > section.section-export-data > div > div > form > input {
+#myModal > div > div > section > div > div > form > div {
     border-radius: 3px;
     background: #54CA98;
     padding: 5px 20px;
+}
+
+#myModal > div > div > section > div > div > form > div > input {
+    margin-top: 0px;
+}
+
+#myModal > div {
+    margin-top: 10%;
+}
+
+#myModal > div > div > section > div {
+    margin: 15px 15px 15px 15px;
 }
 
 /* footer  */
@@ -292,6 +312,17 @@ body > footer > article > ul {
 
 body > footer > article > ul > li:nth-child(3) {
     color: white;
+}
+
+/* Modial dialog */
+
+body > main > section.modal-section > button {
+    border-radius: 3px;
+    background: #54CA98;
+    padding: 12px 35px;
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 195px;
 }
 
 
