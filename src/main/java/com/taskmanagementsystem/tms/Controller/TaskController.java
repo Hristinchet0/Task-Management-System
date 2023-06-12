@@ -21,11 +21,11 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(Model model) {
-        List<Task> tasks = taskService.getTasks();
-        model.addAttribute("task", tasks);
-        return "index";
+        List<Task> task = taskService.getTasks();
+        model.addAttribute("task", task);
+        return "home";
     }
 
     @GetMapping("/addTask")
@@ -36,7 +36,7 @@ public class TaskController {
     @PostMapping("/register")
     public String taskRegister(@ModelAttribute Task t) {
         taskService.addTask(t);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("/edit/{id}")
@@ -53,14 +53,14 @@ public class TaskController {
         logger.info("Task is updated");
         taskService.addTask(t);
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteTask(@PathVariable Long id) {
         logger.info("Task is deleted");
         taskService.deleteTaskById(id);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("/export")
