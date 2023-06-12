@@ -14,24 +14,26 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-body > nav {
+main > nav {
     display: flex;
     flex-direction: initial;
     background-color: #80F2C2;
     justify-content: space-between;
 }
 
-body > nav > a {
+main > nav > a {
     color: #273857;
     font-size: 40px;
     text-decoration: none;
     padding-left: 20px;
 }
 
-body > nav > ul {
+main > nav > ul {
     display: flex;
     flex-direction: row;
     padding-right: 30px;
+    margin-bottom: 0px;
+    margin-top: 15px;
 }
 
 ul > li > a {
@@ -63,7 +65,7 @@ section {
     align-items: center;
 }
 
-body > section:nth-child(3) > div {
+main > section:nth-child(3) > div {
     margin-top: 131px;
 }
 
@@ -74,13 +76,12 @@ h1 {
     padding: 15px;
 }
 
-body > section:nth-child(3) > div > h2 {
-    font-size: 50px;
+
+body > main > section:nth-child(2) > div > h2 {
+    font-size: 59px;
     color: #273857;
     margin-top: 18%;
-
 }
-
 
 #tasks {
     font-family: Arial, Helvetica, sans-serif;
@@ -212,11 +213,11 @@ form {
 
 
 .card-body > form:nth-child(2) > label:nth-child(1) {
-    margin-bottom: 13px;
+
     margin-top: 30px;
 }
 
-body > section > div > div > form > input[type=text] {
+main > section > div > div > form > input[type=text] {
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -228,7 +229,15 @@ body > section > div > div > form > input[type=text] {
     margin-top: 30px;
 }
 
-body > section.section-export-data > div > div > form > p > i.fa-solid.fa-file-csv {
+.btn-add-task {
+    border-radius: 3px;
+    background: #54CA98;
+    padding: 5px 20px;
+    margin-top: 30px;
+    border: none;
+}
+
+main > section.section-export-data > div > div > form > p > i.fa-solid.fa-file-csv {
     padding-left: 30px;
     padding-right: 25px;
 }
@@ -244,15 +253,48 @@ i.fa-solid:nth-child(3) {
 }
 
 
-body > section.section-export-data > div > div > form > input {
+main > section.section-export-data > div > div > form > input {
     border-radius: 3px;
     background: #54CA98;
     padding: 5px 20px;
 }
 
-body > nav > ul {
+/* footer  */
 
+body > footer {
+    background: dimgrey;
 }
+
+body > footer > article > ul > li > a {
+    color: white;
+    margin-left: 8px;
+}
+
+
+body > footer > article > ul > li > i {
+    color: white;
+}
+
+body > footer > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > footer > section > p {
+    color: white;
+}
+
+body > footer > article > ul {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+body > footer > article > ul > li:nth-child(3) {
+    color: white;
+}
+
+
 
 
 
