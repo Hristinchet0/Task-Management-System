@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+
+html * {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+}
 nav {
     display: flex;
     flex-direction: initial;
     background-color: #80F2C2;
+    justify-content: space-between;
 }
 
 nav > a {
     color: #273857;
     font-size: 40px;
     text-decoration: none;
+    padding-left: 20px;
 }
 
 ul {
     display: flex;
     flex-direction: row;
+    padding-right: 30px;
 }
 
 ul > li > a {
@@ -179,6 +192,11 @@ form {
     padding-bottom: 10px;
 }
 
+
+.card-body > form:nth-child(2) > label:nth-child(1) {
+    margin-bottom: 13px;
+}
+
 body > section > div > div > form > input[type=text] {
     margin-top: 8px;
     margin-bottom: 8px;
@@ -189,6 +207,25 @@ body > section > div > div > form > input[type=text] {
     background: #54CA98;
     padding: 5px 20px;
     margin-top: 30px;
+}
+
+.fa-file-csv {
+    padding-left: 30px;
+    padding-right: 25px;
+}
+
+i.fa-solid:nth-child(2) {
+    padding-left: 10px;
+    padding-right: 25px;
+}
+
+i.fa-solid:nth-child(3) {
+    padding-left: 10px;
+    padding-right: 25px;
+}
+
+.card-body > form:nth-child(2) > input:nth-child(6) {
+    margin-top: 22px;
 }
 
 

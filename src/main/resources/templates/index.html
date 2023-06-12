@@ -14,8 +14,8 @@
 <nav>
     <a class="nav-title" href="">Task Management System</a>
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="addTask">Add Task</a></li>
+        <li><i class="fa-solid fa-house"></i><a href="/">Home</a></li>
+        <li><i class="fa-solid fa-square-plus"></i><a href="addTask">Add Task</a></li>
     </ul>
 </nav>
 
@@ -54,10 +54,10 @@
         <div class="card-body">
             <h1>Export Data</h1>
 
-            <p>Choice file type from drop-down menu.</p>
 
             <form th:action="@{/export}" method="get">
                 <label for="files">Choose a file type:</label>
+                <p><i class="fa-solid fa-file-csv"></i><i class="fa-solid fa-file-excel"></i><i class="fa-solid fa-file"></i></p>
                 <select name="files" id="files">
                     <option value="CSV">CSV</option>
                     <option value="TXT">TXT</option>
@@ -65,7 +65,7 @@
                     <option value="JSON">JSON</option>
                 </select>
                 <br><br>
-                <input type="submit" value="Submit">
+                <input class="btn" type="submit" value="Submit">
             </form>
         </div>
     </div>
