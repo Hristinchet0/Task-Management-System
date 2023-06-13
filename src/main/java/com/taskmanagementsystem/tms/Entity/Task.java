@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "task")
-public class Task {
+public class Task{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Task {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "isCompleted")
+    @Column(name = "progress")
     private String progress;
 
     public Task() {
@@ -49,8 +49,8 @@ public class Task {
         return progress;
     }
 
-    public void setProgress(String isCompleted) {
-        this.progress = isCompleted;
+    public void setProgress(String progress) {
+        this.progress = progress;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class Task {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", isCompleted=" + progress +
+                ", progress=" + progress +
                 '}';
     }
 }

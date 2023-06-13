@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+
+html * {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-image: url(../image/b1.jpg);
+    width: 100%;
+    height: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+main > nav {
+    display: flex;
+    flex-direction: initial;
+    background-color: #80F2C2;
+    justify-content: space-between;
+}
+
+main > nav > a {
+    color: #273857;
+    font-size: 40px;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+main > nav > ul {
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+ul > li > a {
+    color: #273857;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    padding-left: 60px;
+}
+
+.fa-user {
+    list-style: none;
+    padding-left: 60px;
+}
+
+/*    */
+
+.index-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.index-content {
+    margin-top: 100px;
+}
+
+h1 {
+    background: #80F2C2;
+    padding: 15px;
+}
+
+.index-content > h1:nth-child(1) {
+    margin-bottom: 70px;
+}
+
+.index-content > p:nth-child(2) {
+    margin-bottom: 35px;
+    margin-left: 80px;
+    font-weight: bold;
+}
+
+.index-content > p:nth-child(3) {
+    margin-bottom: 240px;
+    margin-left: 122px;
+    font-weight: bold;
+}
+
+/* footer */
+
+body > footer {
+    background: dimgrey;
+}
+
+body > footer > article > ul > li > a {
+    color: white;
+    margin-left: 8px;
+}
+
+
+body > footer {
+    background: dimgrey;
+}
+
+body > footer > article > ul > li > a {
+    color: white;
+    margin-left: 8px;
+}
+
+
+body > footer > article > ul > li > i {
+    color: white;
+}
+
+body > footer > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > footer > section > p {
+    color: white;
+}
+
+body > footer > article > ul {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+body > footer > article > ul > li:nth-child(3) {
+    color: white;
+}
+
+body > footer > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
