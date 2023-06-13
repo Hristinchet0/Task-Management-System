@@ -27,7 +27,7 @@ The user can export and download the tasks in a file format: Excel, CSV, JSON an
   <br>
 9. For log out click on LogOut button top right.</h4>
 
-<h4>What technologies I used to create the app:
+<h4>What technologies I used to create my first app:
    <br
 Java
         <br>
