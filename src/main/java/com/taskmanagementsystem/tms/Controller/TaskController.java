@@ -1,11 +1,10 @@
 package com.taskmanagementsystem.tms.Controller;
 
 import com.taskmanagementsystem.tms.Entity.Task;
-import com.taskmanagementsystem.tms.Service.TaskService;
+import com.taskmanagementsystem.tms.Service.TaskServiceImpl;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +21,11 @@ public class TaskController {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
 
-    @Autowired
-    private TaskService taskService;
+    private final TaskServiceImpl taskService;
+
+    public TaskController(TaskServiceImpl taskService) {
+        this.taskService = taskService;
+    }
 
     @GetMapping("/home")
     public String home(Model model) {

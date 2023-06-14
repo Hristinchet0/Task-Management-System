@@ -3,7 +3,6 @@ package com.taskmanagementsystem.tms;
 import com.taskmanagementsystem.tms.Controller.TaskController;
 import com.taskmanagementsystem.tms.Entity.LoginForm;
 import com.taskmanagementsystem.tms.Entity.Task;
-import com.taskmanagementsystem.tms.Service.TaskService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,7 @@ import static org.mockito.Mockito.*;
 class TmsApplicationTests {
 
     @Mock
-    private TaskService taskService;
+    private com.taskmanagementsystem.tms.Service.TaskServiceImpl taskService;
 
     @InjectMocks
     private TaskController taskController;

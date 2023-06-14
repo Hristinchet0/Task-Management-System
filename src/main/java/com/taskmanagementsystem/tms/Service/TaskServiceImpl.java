@@ -11,7 +11,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -20,30 +19,38 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TaskService {
+public class TaskServiceImpl implements TaskService {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
 
-    @Autowired
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
+    public TaskServiceImpl(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+
+    @Override
     public void addTask(Task task) {
         taskRepository.save(task);
     }
 
+    @Override
     public List<Task> getTasks() {
         return taskRepository.findAll();
     }
 
+    @Override
     public Task getTaskById(Long id) {
         Optional<Task> task = taskRepository.findById(Math.toIntExact(id));
         return task.orElse(null);
     }
 
+    @Override
     public void deleteTaskById(Long id) {
         taskRepository.deleteById(Math.toIntExact(id));
     }
 
+    @Override
     public void exportToCSV(HttpServletResponse response, List<Task> taskList) {
         response.setContentType("text/csv");
         response.setHeader("Content-Disposition", "attachment; filename=tasks.csv");
@@ -62,6 +69,7 @@ public class TaskService {
         }
     }
 
+    @Override
     public void exportToJSON(HttpServletResponse response, List<Task> taskList) {
         response.setContentType("application/json");
         response.setHeader("Content-Disposition", "attachment; filename=tasks.json");
@@ -76,6 +84,7 @@ public class TaskService {
         }
     }
 
+    @Override
     public void exportToTXT(HttpServletResponse response, List<Task> taskList) {
         response.setContentType("text/plain");
         response.setHeader("Content-Disposition", "attachment; filename=tasks.txt");
@@ -92,6 +101,7 @@ public class TaskService {
         }
     }
 
+    @Override
     public void exportToEXCEL(HttpServletResponse response, List<Task> taskList) {
         try {
             Workbook workbook = new XSSFWorkbook();
@@ -120,6 +130,5 @@ public class TaskService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
