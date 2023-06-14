@@ -21,15 +21,15 @@ public class TaskController {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
 
-    private final TaskServiceImpl taskService;
+    private final TaskServiceImpl taskServiceImpl;
 
     public TaskController(TaskServiceImpl taskService) {
-        this.taskService = taskService;
+        this.taskServiceImpl = taskService;
     }
 
     @GetMapping("/home")
     public String home(Model model) {
-        List<Task> task = taskService.getTasks();
+        List<Task> task = taskServiceImpl.getTasks();
         model.addAttribute("task", task);
         return "home";
     }
@@ -41,14 +41,14 @@ public class TaskController {
 
     @PostMapping("/register")
     public String taskRegister(@ModelAttribute Task t) {
-        taskService.addTask(t);
+        taskServiceImpl.addTask(t);
         return "redirect:/home";
     }
 
     @GetMapping("/edit/{id}")
     public String editTask(@PathVariable Long id, Model model) {
         logger.info("Task is edited");
-        Task task = taskService.getTaskById(id);
+        Task task = taskServiceImpl.getTaskById(id);
 
         model.addAttribute("task", task);
         return "edit";
@@ -57,7 +57,7 @@ public class TaskController {
     @PostMapping("/update")
     public String updateTask(@ModelAttribute Task t) {
         logger.info("Task is updated");
-        taskService.addTask(t);
+        taskServiceImpl.addTask(t);
 
         return "redirect:/home";
     }
@@ -65,7 +65,7 @@ public class TaskController {
     @GetMapping("/delete/{id}")
     public String deleteTask(@PathVariable Long id) {
         logger.info("Task is deleted");
-        taskService.deleteTaskById(id);
+        taskServiceImpl.deleteTaskById(id);
         return "redirect:/home";
     }
 
@@ -73,16 +73,16 @@ public class TaskController {
     @ResponseBody
     public void exportData(@RequestParam("files") String format, HttpServletResponse response) {
         logger.info("Exporting tasks in file in format: {}", format);
-        List<Task> taskList = taskService.getTasks();
+        List<Task> taskList = taskServiceImpl.getTasks();
 
         if ("CSV".equalsIgnoreCase(format)) {
-            taskService.exportToCSV(response, taskList);
+            taskServiceImpl.exportToCSV(response, taskList);
         } else if ("JSON".equalsIgnoreCase(format)) {
-            taskService.exportToJSON(response, taskList);
+            taskServiceImpl.exportToJSON(response, taskList);
         } else if ("TXT".equalsIgnoreCase(format)) {
-            taskService.exportToTXT(response, taskList);
+            taskServiceImpl.exportToTXT(response, taskList);
         } else if ("EXCEL".equalsIgnoreCase(format)) {
-            taskService.exportToEXCEL(response, taskList);
+            taskServiceImpl.exportToEXCEL(response, taskList);
         } else {
             throw new IllegalArgumentException("Invalid export format: " + format);
         }
