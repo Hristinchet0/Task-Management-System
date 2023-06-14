@@ -1,7 +1,10 @@
 package com.taskmanagementsystem.tms.Entity;
 
 public class LoginForm {
+
     private String username;
+
+
     private String password;
 
     public LoginForm() {
